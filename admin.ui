@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Admin</class>
+ <widget class="QMainWindow" name="Admin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bulk Club</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/imgs/imgs/icon.png</normaloff>:/imgs/imgs/icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1601</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(202, 210, 197);
+font:  700 40pt &quot;Nirmala UI&quot;;
+background-color: rgb(53, 79, 82);</string>
+    </property>
+    <property name="text">
+     <string>                 Administration Managment System</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>191</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/imgs/imgs/admin2.jpeg);
+border-radius:50%;</string>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustIgnored</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DateTime">
+    <property name="geometry">
+     <rect>
+      <x>1430</x>
+      <y>0</y>
+      <width>291</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>16</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(53, 79, 82);
+font:25  &quot;Nirmala UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>mm/dd/yyyy hh:mm</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>220</y>
+      <width>1601</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="UpdateMembers_2">
+     <property name="geometry">
+      <rect>
+       <x>1150</x>
+       <y>250</y>
+       <width>301</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(132, 169, 140);
+font: 14pt &quot;Nirmala UI&quot;;
+color: rgb(255, 255, 255);
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Update Exec Members</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="UpdateMembers">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>250</y>
+       <width>301</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(132, 169, 140);
+font: 14pt &quot;Nirmala UI&quot;;
+color: rgb(255, 255, 255);
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Update Members</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Inventory">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>250</y>
+       <width>301</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(132, 169, 140);
+font: 14pt &quot;Nirmala UI&quot;;
+color: rgb(255, 255, 255);
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Change Inventory</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
