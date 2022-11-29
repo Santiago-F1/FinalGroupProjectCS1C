@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bulk Club</string>
+   <string>Bulk Club Systems</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -43,7 +43,9 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(53, 79, 82);
 font: 350 15pt &quot;Nirmala UI&quot;;
-border: none;
+groupBox{
+border: none
+}
 </string>
    </property>
    <property name="title">
@@ -86,8 +88,7 @@ color:rgb(202, 210, 197);</string>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 350 11pt &quot;Nirmala UI&quot;;
-color:rgb(202, 210, 197);
-border: 1px solid white;</string>
+color:rgb(202, 210, 197);</string>
        </property>
        <property name="echoMode">
         <enum>QLineEdit::Password</enum>
@@ -193,10 +194,9 @@ color:rgb(202, 210, 197);</string>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 350 11pt &quot;Nirmala UI&quot;;
-
+gridline-color: rgb(202, 210, 197);
 color:rgb(202, 210, 197);
-
-border: 1px solid white;</string>
+border-color: rgb(202, 210, 197);</string>
        </property>
        <property name="inputMethodHints">
         <set>Qt::ImhNone</set>

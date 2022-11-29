@@ -10,6 +10,12 @@
     <height>900</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>1600</width>
+    <height>900</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Bulk Club</string>
   </property>
@@ -21,16 +27,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-10</x>
       <y>0</y>
-      <width>1601</width>
-      <height>221</height>
+      <width>1611</width>
+      <height>220</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color:rgb(202, 210, 197);
 font:  700 40pt &quot;Nirmala UI&quot;;
-background-color: rgb(53, 79, 82);</string>
+background-color: rgb(47, 62, 70);
+border: 1px solid white</string>
     </property>
     <property name="text">
      <string>               Store Managment System</string>
@@ -53,13 +60,96 @@ background-color: rgb(53, 79, 82);</string>
 border-radius:50%;</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="AddTrans">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>800</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Add a Transaction</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StoreProducts">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>570</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Store Products</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SalesReport">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>450</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Sales Report</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SearchItem">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>690</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Search Item</string>
+    </property>
+   </widget>
    <widget class="QLabel" name="DateTime">
     <property name="geometry">
      <rect>
       <x>1430</x>
-      <y>0</y>
+      <y>10</y>
       <width>291</width>
-      <height>61</height>
+      <height>60</height>
      </rect>
     </property>
     <property name="font">
@@ -71,7 +161,7 @@ border-radius:50%;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(53, 79, 82);
+     <string notr="true">background-color: rgb(47, 62, 70);
 font:25  &quot;Nirmala UI&quot;;</string>
     </property>
     <property name="text">
@@ -81,17 +171,18 @@ font:25  &quot;Nirmala UI&quot;;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>220</y>
+      <x>10</x>
+      <y>260</y>
       <width>301</width>
-      <height>141</height>
+      <height>140</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(132, 169, 140);
-font: 14pt &quot;Nirmala UI&quot;;
+font:  700 20pt &quot;Nirmala UI&quot;;
 color: rgb(255, 255, 255);
-border-radius:10px;</string>
+border-radius: 10px;
+border: 1px solid black;</string>
     </property>
     <property name="text">
      <string>Store Related</string>
@@ -103,17 +194,18 @@ border-radius:10px;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>220</y>
-      <width>301</width>
-      <height>141</height>
+      <x>1290</x>
+      <y>260</y>
+      <width>300</width>
+      <height>140</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(132, 169, 140);
-font: 14pt &quot;Nirmala UI&quot;;
+font: 700 20pt &quot;Nirmala UI&quot;;
 color: rgb(255, 255, 255);
-border-radius:10px;</string>
+border-radius:10px;
+border: 1px solid black</string>
     </property>
     <property name="text">
      <string>Memberships</string>
@@ -125,190 +217,186 @@ border-radius:10px;</string>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>350</y>
-      <width>301</width>
-      <height>531</height>
+      <x>10</x>
+      <y>330</y>
+      <width>300</width>
+      <height>570</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border:1px solid white;
 background:none;
-border-radius:10px;</string>
+</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>350</y>
-      <width>301</width>
-      <height>531</height>
+      <x>1290</x>
+      <y>340</y>
+      <width>300</width>
+      <height>560</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border:1px solid white;
 background:none;
-border-radius:10px;</string>
+</string>
     </property>
+    <widget class="QPushButton" name="MemStatus">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>110</y>
+       <width>200</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Membership Status</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Rebate">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>230</y>
+       <width>200</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Membership Rebate</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="MemPurchases">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>350</y>
+       <width>200</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Member Purchases</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addMembers">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>460</y>
+       <width>200</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Add/Delete Members</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="widget_3" native="true">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>370</y>
-      <width>191</width>
-      <height>541</height>
+      <x>0</x>
+      <y>220</y>
+      <width>1931</width>
+      <height>51</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPushButton" name="MemStatus">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Membership Status</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="Rebate">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Membership Rebate</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="MemPurchases">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Member Purchases</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="addMembers">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Add/Delete Members</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(53, 79, 82);</string>
+    </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="widget_4" native="true">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>370</y>
-      <width>201</width>
-      <height>541</height>
+      <x>-30</x>
+      <y>250</y>
+      <width>41</width>
+      <height>681</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QPushButton" name="SalesReport">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Sales Report</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="StoreProducts">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Store Products</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="SearchItem">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Search Item</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="AddTrans">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-       </property>
-       <property name="text">
-        <string>Add a Transaction</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(53, 79, 82);</string>
+    </property>
    </widget>
+   <widget class="QWidget" name="widget_5" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1590</x>
+      <y>260</y>
+      <width>31</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(53, 79, 82);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_6" native="true">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>219</y>
+      <width>980</width>
+      <height>680</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(53, 79, 82);</string>
+    </property>
+   </widget>
+   <zorder>widget_6</zorder>
+   <zorder>widget_5</zorder>
+   <zorder>widget_4</zorder>
+   <zorder>widget_3</zorder>
    <zorder>widget_2</zorder>
    <zorder>widget</zorder>
    <zorder>label</zorder>
    <zorder>graphicsView</zorder>
-   <zorder>addMembers</zorder>
    <zorder>AddTrans</zorder>
    <zorder>StoreProducts</zorder>
    <zorder>SalesReport</zorder>
-   <zorder>Rebate</zorder>
    <zorder>SearchItem</zorder>
-   <zorder>MemStatus</zorder>
-   <zorder>MemPurchases</zorder>
    <zorder>DateTime</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
