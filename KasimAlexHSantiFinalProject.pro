@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,6 +12,7 @@ SOURCES += \
     addmembers.cpp \
     addtrans.cpp \
     admin.cpp \
+    database.cpp \
     inventory.cpp \
     loginui.cpp \
     main.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     addmembers.h \
     addtrans.h \
     admin.h \
+    database.h \
     inventory.h \
     loginui.h \
     mempurchases.h \

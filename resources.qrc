@@ -5,4 +5,14 @@
         <file>imgs/Admin.png</file>
         <file>imgs/admin2.jpeg</file>
     </qresource>
+    <qresource prefix="/inputFiles">
+        <file>day1.txt</file>
+        <file>day2.txt</file>
+        <file>day3.txt</file>
+        <file>day4.txt</file>
+        <file>day5.txt</file>
+        <file>day6.txt</file>
+        <file>day7.txt</file>
+        <file>warehouse shoppers-1.txt</file>
+    </qresource>
 </RCC>
