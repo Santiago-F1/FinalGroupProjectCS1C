@@ -51,6 +51,7 @@ void Storemanager::on_AddTrans_clicked()
     addTrans = new AddTrans(this);
     addTrans->setGeometry(463,307,975, 650);
     addTrans->show();
+
 }
 
 
