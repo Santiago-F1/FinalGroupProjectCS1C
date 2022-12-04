@@ -13,7 +13,6 @@ QSqlDatabase database = QSqlDatabase::addDatabase("QSQLITE");
 void setupDatabasePurchases(QString filePath)
 {
     database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
-    QString fileName = ":/inputFiles/day1.txt";
     if (database.open())
     {
         int Month;
@@ -140,4 +139,19 @@ void setupDatabasePeople(QString filePath)
         }
     database.close();
     }
+}
+
+void clearDatabase()
+{
+    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
+    QSqlQuery qry;
+    if (database.open())
+    {
+        qry.exec(QString("DELETE FROM items"));
+        qInfo() << qry.lastError();
+        qry.exec(QString("DELETE FROM Members"));
+        qInfo() << qry.lastError();
+
+    }
+
 }
