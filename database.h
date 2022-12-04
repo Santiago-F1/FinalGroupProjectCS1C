@@ -8,5 +8,6 @@
 
 void setupDatabasePurchases(QString filePath);
 void setupDatabasePeople(QString filePath);
+void clearDatabase();
 
 #endif // DATABASE_H
