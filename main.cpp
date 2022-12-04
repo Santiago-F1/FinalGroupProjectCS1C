@@ -21,12 +21,13 @@ int main(int argc, char *argv[])
     QFile file(downloadFolder);
 
     QTextStream stream(&file);
-    QString isDatabaseInputed = stream.readLine();
 
     //clearDatabase();
     if (file.open(QIODevice::ReadWrite))
     {
-        if (isDatabaseInputed == "true" || isDatabaseInputed == "")
+        QString isDatabaseInputed = stream.readLine();
+        qInfo() << isDatabaseInputed;
+        if (isDatabaseInputed == "")
         {
             stream << "true";
             qInfo() << "Writing to File";
