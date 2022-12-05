@@ -14,7 +14,7 @@
    <string>Rebate</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(202, 210, 197);</string>
+   <string notr="true">QTableCornerButton::section {background-color: rgb(202, 210, 197)};</string>
   </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
@@ -26,9 +26,16 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QTableWidget::Item:selected{rgb(0, 0, 0)};
-background-color: rgb(132, 169, 140);
-color: rgb(255, 255, 255);</string>
+    <string notr="true">
+
+
+QHeaderView::section {background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);};
+
+background-color: rgb(47, 62, 70); color:rgb(255, 255, 255)
+
+
+</string>
    </property>
    <property name="gridStyle">
     <enum>Qt::SolidLine</enum>
