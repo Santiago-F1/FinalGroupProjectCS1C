@@ -3,16 +3,19 @@
 #include <QDebug>
 #include <QFile>
 #include "database.h"
+#include "qsqlquerymodel.h"
 #include <QDate>
 #include <QCoreApplication>
 #include <QSqlError>
 #include <QStandardPaths>
 
-QSqlDatabase database = QSqlDatabase::addDatabase("QSQLITE");
+
+QSqlDatabase database =QSqlDatabase::addDatabase("QSQLITE");
 
 void setupDatabasePurchases(QString filePath)
 {
-    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
+    QSqlQuery qry;
+   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
     if (database.open())
     {
         int Month;
@@ -20,7 +23,7 @@ void setupDatabasePurchases(QString filePath)
         int Year;
         int CustomerPurchasedID;
         QString ProductDescription;
-        float PriceOfProduct;
+        double PriceOfProduct;
         int Quantity;
         QFile file(filePath);
         if(!file.exists())
@@ -47,12 +50,12 @@ void setupDatabasePurchases(QString filePath)
             line = stream.readLine();
             ProductDescription = line;
             line = stream.readLine();
-            PriceOfProduct = line.toFloat();
+            PriceOfProduct = line.toDouble();
             line = stream.readLine();
             Quantity = line.toInt();
-            QSqlQuery qry;
 
-            qDebug() << qry.prepare("INSERT INTO items (Month, Day, Year, CustomerPurchasedID, PriceOfProduct, Quantity, ProductDescription)" "VALUES(:Month, :Day, :Year, :CustomerPurchasedID, :PriceOfProduct, :Quantity, :ProductDescription)");
+
+            qDebug() << qry.prepare("INSERT INTO items (Month, Day, Year, CustomerPurchasedID, PriceOfProduct, Quantity, ProductDescription)" "VALUES(:Month, :Day, :Year, :CustomerPurchasedID, :ROUND(PriceOfProduct,2), :Quantity, :ProductDescription)");
             qDebug() << qry.lastError().text();
             qry.bindValue(0, Month);
             qry.bindValue(1, Day);
@@ -78,7 +81,7 @@ void setupDatabasePurchases(QString filePath)
 
 void setupDatabasePeople(QString filePath)
 {
-    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
+   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
     QSqlQuery qry;
     if (database.open())
     {
@@ -141,9 +144,72 @@ void setupDatabasePeople(QString filePath)
     }
 }
 
+void addTotaltoDatabase()           //not including tax
+{
+    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+
+    QSqlQuery qry;
+
+    if(database.open())
+    {
+
+        qry.prepare("UPDATE Members SET TotalAmountSpent = (SELECT ROUND(SUM(PriceOfProduct)*Quantity,2) FROM items WHERE CustomerPurchasedID = MemberNumber)");
+        if (qry.exec())
+        {
+            qDebug() << "\nSuccsessfully updated total amount";
+        }
+        else
+        {
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nFailed to update member amount total";
+        }
+    }
+    database.close();
+}
+
+void addRebatetoDatabase()
+{
+    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+
+
+    QSqlQuery qry;
+
+    if(database.open())
+    {
+
+        qry.prepare("UPDATE Members SET RebateAmount =ROUND(TotalAmountSpent*.2,2)");
+        if (qry.exec())
+        {
+            qDebug() << "\nUpdating Rebate Amount successful";
+        }
+        else
+        {
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nfailed to update rebate amount";
+        }
+    }
+    qry.prepare("UPDATE Members SET RebateAmount=0, TotalAmountSpent =0 WHERE RebateAmount IS NULL OR TotalAmountSpent IS NULL");
+    if (qry.exec())
+    {
+        qDebug() << "\nUpdated Nulls properlly";
+    }
+    else
+    {
+        qDebug() << qry.executedQuery();
+        qDebug() << qry.lastError().text();
+        qDebug() << "\nI AM AN UTTER FAILURE";
+    }
+    database.close();
+}
+
+
+
+
 void clearDatabase()
 {
-    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
+   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
     QSqlQuery qry;
     if (database.open())
     {
@@ -155,3 +221,7 @@ void clearDatabase()
     }
 
 }
+
+
+
+
