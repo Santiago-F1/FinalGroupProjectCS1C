@@ -12,10 +12,12 @@
 
 QSqlDatabase database =QSqlDatabase::addDatabase("QSQLITE");
 
+
 void setupDatabasePurchases(QString filePath)
 {
+    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
     QSqlQuery qry;
-   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+
     if (database.open())
     {
         int Month;
@@ -81,7 +83,7 @@ void setupDatabasePurchases(QString filePath)
 
 void setupDatabasePeople(QString filePath)
 {
-   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+   //database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
     QSqlQuery qry;
     if (database.open())
     {
@@ -119,7 +121,7 @@ void setupDatabasePeople(QString filePath)
 
             qInfo() << "Month: " << Month << " Day: " << Day << " Year: " << Year;
 
-            qDebug() << qry.prepare("INSERT or IGNORE INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear)" "VALUES(?,?,?,?,?,?,?,?)");
+            qDebug() << qry.prepare("INSERT INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear)" "VALUES(?,?,?,?,?,?,?,?)");
             qDebug() << qry.lastError().text();
             qry.bindValue(0, memberName);
             qry.bindValue(1, memberID);
@@ -146,7 +148,7 @@ void setupDatabasePeople(QString filePath)
 
 void addTotaltoDatabase()           //not including tax
 {
-    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    //database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
 
     QSqlQuery qry;
 
@@ -170,7 +172,7 @@ void addTotaltoDatabase()           //not including tax
 
 void addRebatetoDatabase()
 {
-    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    //database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
 
 
     QSqlQuery qry;
@@ -199,17 +201,15 @@ void addRebatetoDatabase()
     {
         qDebug() << qry.executedQuery();
         qDebug() << qry.lastError().text();
-        qDebug() << "\nI AM AN UTTER FAILURE";
+        qDebug() << "\nI AM AN UTTER FAILURE in database";
     }
     database.close();
 }
 
 
-
-
 void clearDatabase()
 {
-   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+   //database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
     QSqlQuery qry;
     if (database.open())
     {

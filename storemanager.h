@@ -4,7 +4,7 @@
 #include"storeproducts.h"
 #include"searchitem.h"
 #include"addtrans.h"
-#include"addmembers.h"
+
 #include"mempurchases.h"
 #include"rebate.h"
 #include"memstatus.h"
@@ -32,7 +32,7 @@ private slots:
 
     void on_AddTrans_clicked();
 
-    void on_addMembers_clicked();
+
 
     void on_MemPurchases_clicked();
 
@@ -46,7 +46,7 @@ private:
     StoreProducts *Store;
     SearchItem *Search;
     AddTrans *addTrans;
-    AddMembers *addMems;
+
     MemPurchases *memP;
     Rebate *rebate;
     MemStatus *memStatus;

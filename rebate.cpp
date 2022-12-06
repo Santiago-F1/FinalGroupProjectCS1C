@@ -27,6 +27,7 @@ Rebate::Rebate(QWidget *parent) :
 
             ui->tableView->setModel(modal);
            // ui->tableView->setStyleSheet("QHeaderView::section { background-color:red }");
+
             ui->tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
             ui->tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
             ui->tableView->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
