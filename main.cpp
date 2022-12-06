@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     Storemanager s;
     Admin a1;
 
+
     QString downloadFolder = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     downloadFolder.append("/readDatabase.txt");
 
@@ -39,13 +40,15 @@ int main(int argc, char *argv[])
             setupDatabasePurchases(":inputFiles/day6.txt");
             setupDatabasePurchases(":inputFiles/day7.txt");
             setupDatabasePeople(":inputFiles/warehouse shoppers-1.txt");
+            addTotaltoDatabase();   //not including tax
+            addRebatetoDatabase();
+
         }
         else
         {
             qInfo() << "File already written";
         }
     }
-
 
     file.close();
 

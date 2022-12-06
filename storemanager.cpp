@@ -56,13 +56,7 @@ void Storemanager::on_AddTrans_clicked()
 }
 
 
-void Storemanager::on_addMembers_clicked()
-{
 
-    addMems = new AddMembers(this);
-    addMems->setGeometry(463,307,975, 650);
-    addMems->show();
-}
 
 
 void Storemanager::on_MemPurchases_clicked()
