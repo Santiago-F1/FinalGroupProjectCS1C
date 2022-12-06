@@ -1,6 +1,7 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 #include"inventory.h"
+#include"addmembers.h"
 #include"updatemembers.h"
 #include"updateexec.h"
 #include <QMainWindow>
@@ -24,11 +25,14 @@ private slots:
 
     void on_UpdateMembers_2_clicked();
 
+    void on_addMembers_clicked();
+
 private:
     Ui::Admin *ui;
     Inventory *Inv;
     UpdateMembers *upMems;
     UpdateExec *upExec;
+    AddMembers *add;
 
 };
 

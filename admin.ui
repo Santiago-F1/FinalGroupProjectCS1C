@@ -199,9 +199,9 @@ background:none;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>170</y>
+       <y>110</y>
        <width>200</width>
-       <height>100</height>
+       <height>80</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -219,9 +219,9 @@ border-radius:10px;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>360</y>
+       <y>250</y>
        <width>200</width>
-       <height>100</height>
+       <height>80</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -234,6 +234,26 @@ border-radius:10px;
      </property>
      <property name="text">
       <string>Update Exec Members</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addMembers">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>390</y>
+       <width>200</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+     </property>
+     <property name="text">
+      <string>Add/Delete Members</string>
      </property>
     </widget>
    </widget>

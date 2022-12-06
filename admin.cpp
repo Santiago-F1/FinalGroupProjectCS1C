@@ -42,3 +42,10 @@ void Admin::on_UpdateMembers_2_clicked()
     upExec->show();
 }
 
+void Admin::on_addMembers_clicked()
+{
+
+    add = new AddMembers(this);
+    add->setGeometry(463,307,975, 650);
+    add->show();
+}
