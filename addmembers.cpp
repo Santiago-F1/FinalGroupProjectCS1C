@@ -123,7 +123,41 @@ void AddMembers::on_addmembers_2_clicked()
 
 void AddMembers::on_deletemembers_2_clicked()
 {
+    QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
+    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    QSqlQuery qry;
+    QSqlQueryModel *modal=new QSqlQueryModel;
+    QString number;
+    number = ui->numberEdit_2->text();
+    if(database1.open())
+    {
 
+        qry.prepare("DELETE FROM Members where MemberNumber = '"+number+"'");
+
+        if (qry.exec())
+        {
+            qry.prepare("SELECT MemberName, MemberNumber, MembershipType FROM Members");
+            qry.exec();
+
+            modal->setQuery(std::move(qry));
+
+            ui->tableView->setModel(modal);
+            QString message = "Successfully deleted Member";
+           // ui->addError->setStyleSheet("QTextBrowser::addError { color:green }");
+            ui->deleteError->setPlaceholderText(message);
+            qDebug() << "\nsuccessful deletion";
+        }
+        else
+        {
+            QString message = "Failed to delete new Member(Database issue)";
+
+            ui->deleteError->setPlaceholderText(message);
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nfailed to add member";
+        }
+    }
+    database1.close();
 }
 
 

@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
             setupDatabasePeople(":inputFiles/warehouse shoppers-1.txt");
             addTotaltoDatabase();   //not including tax
             addRebatetoDatabase();
+            shouldupgrade();
 
         }
         else

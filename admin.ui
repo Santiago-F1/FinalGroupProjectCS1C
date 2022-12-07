@@ -199,7 +199,7 @@ background:none;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>110</y>
+       <y>220</y>
        <width>200</width>
        <height>80</height>
       </rect>
@@ -213,27 +213,6 @@ border-radius:10px;
      </property>
      <property name="text">
       <string>Update Members</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="UpdateMembers_2">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>250</y>
-       <width>200</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-
-</string>
-     </property>
-     <property name="text">
-      <string>Update Exec Members</string>
      </property>
     </widget>
     <widget class="QPushButton" name="addMembers">
