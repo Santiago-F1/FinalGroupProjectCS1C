@@ -1,6 +1,8 @@
 #ifndef MEMPURCHASES_H
 #define MEMPURCHASES_H
-
+#include "qsqlerror.h"
+#include<QSqlQueryModel>
+#include<QSqlQuery>
 #include <QDialog>
 
 namespace Ui {
@@ -14,6 +16,12 @@ class MemPurchases : public QDialog
 public:
     explicit MemPurchases(QWidget *parent = nullptr);
     ~MemPurchases();
+
+private slots:
+
+
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MemPurchases *ui;
