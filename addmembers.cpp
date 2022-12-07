@@ -157,6 +157,7 @@ void AddMembers::on_deletemembers_2_clicked()
             qDebug() << "\nfailed to add member";
         }
     }
+    database1.close();
 }
 
 

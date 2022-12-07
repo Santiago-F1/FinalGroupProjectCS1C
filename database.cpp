@@ -207,6 +207,40 @@ void addRebatetoDatabase()
     database.close();
 }
 
+void shouldupgrade()
+{
+    QSqlQuery qry;
+
+    if(database.open())
+    {
+
+        qry.prepare("UPDATE Members SET shouldUpgrade = 'DOWNGRADE' WHERE RebateAmount < '125' AND MembershipType = 'Executive'");
+        if (qry.exec())
+        {
+            qDebug() << "\nUpdated the downgrade status";
+        }
+        else
+        {
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nfailed to update in should upgrade";
+        }
+    }
+    qry.prepare("UPDATE Members SET shouldUpgrade = 'UPGRADE' WHERE RebateAmount > '125' AND MembershipType = 'Regular'");
+    if (qry.exec())
+    {
+        qDebug() << "\nUpdated update status";
+    }
+    else
+    {
+        qDebug() << qry.executedQuery();
+        qDebug() << qry.lastError().text();
+        qDebug() << "\nI AM AN UTTER FAILURE in should upgrade";
+    }
+    database.close();
+}
+
+
 
 void clearDatabase()
 {

@@ -1,6 +1,8 @@
 #ifndef UPDATEMEMBERS_H
 #define UPDATEMEMBERS_H
-
+#include "qsqlerror.h"
+#include<QSqlQueryModel>
+#include<QSqlQuery>
 #include <QDialog>
 
 namespace Ui {
