@@ -6,9 +6,73 @@ MemPurchases::MemPurchases(QWidget *parent) :
     ui(new Ui::MemPurchases)
 {
     ui->setupUi(this);
+    QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
+    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    QSqlQuery qry;
+    QSqlQueryModel *modal=new QSqlQueryModel;
+    if(database1.open())
+    {
+    qry.prepare("SELECT MemberName, MemberNumber FROM Members");
+    qry.exec();
+
+    modal->setQuery(std::move(qry));
+
+    ui->inventory->setModel(modal);
+    ui->inventory->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->inventory->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    qDebug() << "\nOpening inventory good";
+    }
+    else
+    {
+
+        qDebug() << qry.executedQuery();
+        qDebug() << qry.lastError().text();
+        qDebug() << "\nfailed to open items from database";
+    }
+    database1.close();
+}
+
+
+
+void MemPurchases::on_pushButton_clicked()
+{
+    QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
+    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    QSqlQuery qry;
+    QSqlQueryModel *modal=new QSqlQueryModel;
+    QString search;
+    search = ui->nameEdit->text();
+    database1.open();
+
+    qry.prepare("SELECT MemberName, MemberNumber, ROUND(TotalAmountSpent*1.0775,2) AS TotalWithTax FROM Members WHERE MemberName = '"+search+"' OR MemberNumber = '"+search+"'");
+    if(qry.exec())
+    {
+        modal->setQuery(std::move(qry));
+
+        ui->output->setModel(modal);
+        ui->output->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+        ui->output->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+        ui->output->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
+      //  QString message = "Successfully Search";
+//        ui->error->setPlaceholderText(message);
+        qDebug() << "\nwork it worky yay";
+    }
+
+
+    else
+    {
+
+        QString message = "Invalid Item";
+        ui->error->setPlaceholderText(message);
+        qDebug() << qry.executedQuery();
+        qDebug() << qry.lastError().text();
+        qDebug() << "\nu aboslute failure";
+    }
+    database1.close();
 }
 
 MemPurchases::~MemPurchases()
 {
     delete ui;
 }
+

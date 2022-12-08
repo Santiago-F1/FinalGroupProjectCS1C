@@ -11,6 +11,7 @@ void setupDatabasePeople(QString filePath);
 void clearDatabase();
 void addTotaltoDatabase();
 void addRebatetoDatabase();
+void shouldupgrade();
 
 
 

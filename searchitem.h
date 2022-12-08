@@ -1,6 +1,8 @@
 #ifndef SEARCHITEM_H
 #define SEARCHITEM_H
-
+#include "qsqlerror.h"
+#include<QSqlQueryModel>
+#include<QSqlQuery>
 #include <QDialog>
 
 namespace Ui {
@@ -14,6 +16,9 @@ class SearchItem : public QDialog
 public:
     explicit SearchItem(QWidget *parent = nullptr);
     ~SearchItem();
+
+private slots:
+    void on_addmembers_2_clicked();
 
 private:
     Ui::SearchItem *ui;
