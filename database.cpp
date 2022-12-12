@@ -164,7 +164,7 @@ void addTotaltoDatabase()           //not including tax
     if(database.open())
     {
 
-        qry.prepare("UPDATE Members SET TotalAmountSpent = (SELECT ROUND(SUM(PriceOfProduct)*SUM(Quantity),2) FROM items WHERE CustomerPurchasedID = MemberNumber)");
+        qry.prepare("UPDATE Members SET TotalAmountSpent = (SELECT ROUND(SUM(PriceOfProduct*Quantity),2) FROM items WHERE CustomerPurchasedID = MemberNumber)");
         if (qry.exec())
         {
             qDebug() << "\nSuccsessfully updated total amount";

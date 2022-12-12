@@ -199,9 +199,9 @@ background:none;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>220</y>
+       <y>160</y>
        <width>200</width>
-       <height>80</height>
+       <height>100</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -219,9 +219,9 @@ border-radius:10px;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>390</y>
+       <y>370</y>
        <width>200</width>
-       <height>80</height>
+       <height>100</height>
       </rect>
      </property>
      <property name="styleSheet">
