@@ -4,7 +4,7 @@
 #include <QSqlDatabase>
 #include <QDate>
 #include <QSqlError>
-
+#include "database.h"
 
 extern QSqlDatabase database;
 QString originalDate;
@@ -59,6 +59,9 @@ void Inventory::on_Add_clicked()
 
         if (qry.exec())
         {
+            updateTotal(database);
+            updateUpgrades(database);
+            updateRebate(database);
             qDebug() << "\nDatabase worked";
 
         }
@@ -167,6 +170,9 @@ void Inventory::on_Update_clicked()
         qry.bindValue(6, updateProductDescription);
         if (qry.exec())
         {
+            updateTotal(database);
+            updateUpgrades(database);
+            updateRebate(database);
             qDebug() << "update add fine";
                     qDebug() << qry.lastError().text();
 
@@ -192,6 +198,9 @@ void Inventory::on_Delete_clicked()
         qDebug() << qry.lastError().text();
         if (qry.exec())
         {
+            updateTotal(database);
+            updateUpgrades(database);
+            updateRebate(database);
             qDebug() << "delete fine";
                     qDebug() << qry.lastError().text();
 

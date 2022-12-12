@@ -12,7 +12,9 @@ void clearDatabase();
 void addTotaltoDatabase();
 void addRebatetoDatabase();
 void shouldupgrade();
-
+void updateUpgrades(QSqlDatabase &db);
+void updateRebate(QSqlDatabase &db);
+void updateTotal(QSqlDatabase &db);
 
 
 

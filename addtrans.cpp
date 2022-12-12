@@ -4,6 +4,7 @@
 #include <QSqlDatabase>
 #include <QDate>
 #include <QSqlError>
+#include "database.h"
 
 extern QSqlDatabase database;
 QString date;
@@ -80,14 +81,19 @@ void AddTrans::on_addItem_clicked()
 
         if (qry.exec())
         {
+            updateTotal(database);
+            updateRebate(database);
+            qry.clear();
             qDebug() << "\nDatabase worked";
         }
         else
         {
             qDebug() << qry.executedQuery();
             qDebug() << qry.lastError().text();
+            qry.clear();
             qDebug() << "\nDatabase did not work";
         }
         database.close();
     }
+    database.close();
 }

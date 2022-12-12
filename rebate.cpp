@@ -3,6 +3,7 @@
 #include "ui_rebate.h"
 #include<QSqlQueryModel>
 #include<QSqlQuery>
+#include "database.h"
 
 
 
@@ -12,14 +13,15 @@ Rebate::Rebate(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
     database1.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     QSqlQueryModel *modal=new QSqlQueryModel;
-
+    updateTotal(database1);
+    updateRebate(database1);
     if(database1.open())
     {
-
         qry.prepare("SELECT MemberName, MemberNumber, RebateAmount FROM Members WHERE MembershipType = 'Executive' GROUP By MemberNumber");
         if (qry.exec())
         {

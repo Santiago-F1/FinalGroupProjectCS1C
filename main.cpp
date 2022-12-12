@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     QTextStream stream(&file);
 
-    //clearDatabase();
+    clearDatabase();
     if (file.open(QIODevice::ReadWrite))
     {
         QString isDatabaseInputed = stream.readLine();

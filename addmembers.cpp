@@ -1,5 +1,6 @@
 #include "addmembers.h"
 #include "ui_addmembers.h"
+#include "database.h"
 
 
 
@@ -51,7 +52,7 @@ AddMembers::~AddMembers()
 void AddMembers::on_addmembers_2_clicked()
 {
     QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
-    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database1.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     QSqlQueryModel *modal=new QSqlQueryModel;
     QString name, type;
@@ -71,7 +72,7 @@ void AddMembers::on_addmembers_2_clicked()
         if(database1.open())
         {
 
-            qry.prepare("INSERT INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear) VALUES(:name, :num, :type, :total, :rebate, :month, :day, :year)");
+            qry.prepare("INSERT INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear, renewAmount) VALUES(:name, :num, :type, :total, :rebate, :month, :day, :year, :renewAmount)");
             qry.bindValue(0,name);
             qry.bindValue(1,num);
             qry.bindValue(2,type);
@@ -80,6 +81,14 @@ void AddMembers::on_addmembers_2_clicked()
             qry.bindValue(5,month);
             qry.bindValue(6,day);
             qry.bindValue(7,year);
+            if (type.toStdString() == "Exclusive" )
+            {
+                qry.bindValue(8,120);
+            }
+            else
+            {
+                qry.bindValue(8,65);
+            }
             if (qry.exec())
             {
                 qry.prepare("SELECT MemberName, MemberNumber, MembershipType FROM Members");
@@ -91,6 +100,8 @@ void AddMembers::on_addmembers_2_clicked()
                 QString message = "Successfully added new Member";
                // ui->addError->setStyleSheet("QTextBrowser::addError { color:green }");
                 ui->addError->setPlaceholderText(message);
+                updateUpgrades(database1);
+                updateRebate(database1);
                 qDebug() << "\nAdding member successful";
             }
             else
