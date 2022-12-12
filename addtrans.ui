@@ -13,6 +13,208 @@
   <property name="windowTitle">
    <string>Add Transaction</string>
   </property>
+  <widget class="QTextEdit" name="Date">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>190</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="CustomerPurchased">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>240</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="PriceOfProduct">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>290</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>180</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Date (MM/DD/YYYY):  </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>230</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Customer Purchased ID:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>280</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Price of Product:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>330</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Quantity: </string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Quantity">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>340</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>380</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Product Description:</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="ProductDescription">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>390</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>100</y>
+     <width>251</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Add purchase to Member</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addItem">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>480</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Add Item</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

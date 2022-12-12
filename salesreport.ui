@@ -32,13 +32,13 @@ color:rgb(255, 255, 255);
 </string>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView_2">
+  <widget class="QTableView" name="Executive">
    <property name="geometry">
     <rect>
-     <x>489</x>
-     <y>140</y>
+     <x>490</x>
+     <y>170</y>
      <width>491</width>
-     <height>510</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -132,6 +132,65 @@ border-radius:10px;
    </property>
    <property name="wordWrap">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTableView" name="Regular">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>430</y>
+     <width>491</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QHeaderView::section, QTableCornerButton::section {background-color: rgb(202, 210, 197); color:rgb(0, 0, 0)};
+
+color:rgb(255, 255, 255);
+
+
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>140</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Executive Members</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>400</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 210, 197);
+color:rgb(0, 0, 0);
+font: 350 13pt &quot;Nirmala UI&quot;;
+border-radius:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>Regular Members</string>
    </property>
   </widget>
  </widget>

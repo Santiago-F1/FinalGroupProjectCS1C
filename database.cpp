@@ -15,7 +15,7 @@ QSqlDatabase database =QSqlDatabase::addDatabase("QSQLITE");
 
 void setupDatabasePurchases(QString filePath)
 {
-    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
 
     if (database.open())
@@ -83,7 +83,7 @@ void setupDatabasePurchases(QString filePath)
 
 void setupDatabasePeople(QString filePath)
 {
-   //database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+   //database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     if (database.open())
     {
@@ -122,7 +122,7 @@ void setupDatabasePeople(QString filePath)
 
             qInfo() << "Month: " << Month << " Day: " << Day << " Year: " << Year;
 
-            qDebug() << qry.prepare("INSERT or IGNORE INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear)" "VALUES(?,?,?,?,?,?,?,?)");
+            qDebug() << qry.prepare("INSERT or IGNORE INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear, renewAmount)" "VALUES(?,?,?,?,?,?,?,?,?)");
             qDebug() << qry.lastError().text();
             qry.bindValue(0, memberName);
             qry.bindValue(1, memberID);
@@ -132,6 +132,14 @@ void setupDatabasePeople(QString filePath)
             qry.bindValue(5, Month);
             qry.bindValue(6, Day);
             qry.bindValue(7, Year);
+            if (membershipType.toStdString() == "Regular")
+            {
+                qry.bindValue(8,65);
+            }
+            else
+            {
+                qry.bindValue(8,120);
+            }
             if (qry.exec())
             {
                 qDebug() << "\nDatabase worked";
@@ -169,6 +177,92 @@ void addTotaltoDatabase()           //not including tax
         }
     }
     database.close();
+}
+
+void updateRebate(QSqlDatabase &db)
+{
+    QSqlQuery qry;
+    if(db.open())
+    {
+
+        qry.prepare("UPDATE Members SET RebateAmount =ROUND(TotalAmountSpent*.02,2)");
+        if (qry.exec())
+        {
+            qDebug() << "\nUpdating Rebate Amount successful";
+        }
+        else
+        {
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nfailed to update rebate amount";
+        }
+    }
+    qry.prepare("UPDATE Members SET RebateAmount=0, TotalAmountSpent =0 WHERE RebateAmount IS NULL OR TotalAmountSpent IS NULL");
+    if (qry.exec())
+    {
+        qDebug() << "\nUpdated Nulls properlly";
+    }
+    else
+    {
+        qDebug() << qry.executedQuery();
+        qDebug() << qry.lastError().text();
+        qDebug() << "\nI AM AN UTTER FAILURE in database";
+    }
+    db.close();
+}
+
+void updateUpgrades(QSqlDatabase &db)
+{
+    QSqlQuery qry;
+
+    if(db.open())
+    {
+
+        qry.prepare("UPDATE Members SET shouldUpgrade = 'DOWNGRADE' WHERE RebateAmount < '125' AND MembershipType = 'Executive'");
+        if (qry.exec())
+        {
+            qDebug() << "\nUpdated the downgrade status";
+        }
+        else
+        {
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nfailed to update in should upgrade";
+        }
+    }
+    qry.prepare("UPDATE Members SET shouldUpgrade = 'UPGRADE' WHERE RebateAmount > '125' AND MembershipType = 'Regular'");
+    if (qry.exec())
+    {
+        qDebug() << "\nUpdated update status";
+    }
+    else
+    {
+        qDebug() << qry.executedQuery();
+        qDebug() << qry.lastError().text();
+        qDebug() << "\nI AM AN UTTER FAILURE in should upgrade";
+    }
+    db.close();
+}
+void updateTotal(QSqlDatabase &db)
+{
+    QSqlQuery qry;
+
+    if(db.open())
+    {
+
+        qry.prepare("UPDATE Members SET TotalAmountSpent = (SELECT ROUND(SUM(PriceOfProduct*Quantity),2) FROM items WHERE CustomerPurchasedID = MemberNumber)");
+        if (qry.exec())
+        {
+            qDebug() << "\nSuccsessfully updated total amount";
+        }
+        else
+        {
+            qDebug() << qry.executedQuery();
+            qDebug() << qry.lastError().text();
+            qDebug() << "\nFailed to update member amount total";
+        }
+    }
+    db.close();
 }
 
 void addRebatetoDatabase()
@@ -244,7 +338,7 @@ void shouldupgrade()
 
 void clearDatabase()
 {
-   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+   database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     if (database.open())
     {

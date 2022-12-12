@@ -15,6 +15,11 @@ public:
     explicit MemStatus(QWidget *parent = nullptr);
     ~MemStatus();
 
+private slots:
+    void on_inputDate_textChanged();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MemStatus *ui;
 };
