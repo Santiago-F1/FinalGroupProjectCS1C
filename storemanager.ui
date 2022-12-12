@@ -64,7 +64,7 @@ border-radius:50%;</string>
     <property name="geometry">
      <rect>
       <x>61</x>
-      <y>800</y>
+      <y>760</y>
       <width>200</width>
       <height>60</height>
      </rect>
@@ -80,26 +80,6 @@ border-radius:10px;
      <string>Add a Transaction</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="StoreProducts">
-    <property name="geometry">
-     <rect>
-      <x>61</x>
-      <y>570</y>
-      <width>200</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(202, 210, 197);
-color:rgb(0, 0, 0);
-font: 350 13pt &quot;Nirmala UI&quot;;
-border-radius:10px;
-</string>
-    </property>
-    <property name="text">
-     <string>Store Products</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="SalesReport">
     <property name="enabled">
      <bool>true</bool>
@@ -107,7 +87,7 @@ border-radius:10px;
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>450</y>
+      <y>460</y>
       <width>200</width>
       <height>60</height>
      </rect>
@@ -127,7 +107,7 @@ border-radius:10px;
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>690</y>
+      <y>610</y>
       <width>200</width>
       <height>60</height>
      </rect>
@@ -172,7 +152,7 @@ font:25  &quot;Nirmala UI&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>260</y>
+      <y>270</y>
       <width>301</width>
       <height>140</height>
      </rect>
@@ -218,9 +198,9 @@ border: 1px solid black</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>330</y>
+      <y>340</y>
       <width>300</width>
-      <height>570</height>
+      <height>560</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -247,7 +227,7 @@ background:none;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>150</y>
+       <y>110</y>
        <width>200</width>
        <height>60</height>
       </rect>
@@ -270,7 +250,7 @@ border-radius:10px;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>280</y>
+       <y>260</y>
        <width>200</width>
        <height>60</height>
       </rect>
@@ -374,7 +354,6 @@ border-radius:10px;
    <zorder>label</zorder>
    <zorder>graphicsView</zorder>
    <zorder>AddTrans</zorder>
-   <zorder>StoreProducts</zorder>
    <zorder>SalesReport</zorder>
    <zorder>SearchItem</zorder>
    <zorder>DateTime</zorder>

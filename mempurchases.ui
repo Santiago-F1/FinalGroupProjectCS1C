@@ -16,8 +16,8 @@
   <widget class="QTextBrowser" name="error">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>250</y>
+     <x>610</x>
+     <y>400</y>
      <width>261</width>
      <height>31</height>
     </rect>
@@ -48,8 +48,8 @@
   <widget class="QLineEdit" name="nameEdit">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>110</y>
+     <x>610</x>
+     <y>260</y>
      <width>200</width>
      <height>24</height>
     </rect>
@@ -61,9 +61,9 @@
   <widget class="QTableView" name="output">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>450</y>
-     <width>491</width>
+     <x>535</x>
+     <y>529</y>
+     <width>361</width>
      <height>121</height>
     </rect>
    </property>
@@ -80,8 +80,8 @@ color:rgb(255, 255, 255);
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>340</y>
+     <x>603</x>
+     <y>445</y>
      <width>221</width>
      <height>81</height>
     </rect>
@@ -107,7 +107,7 @@ color:rgb(255, 255, 255);
     <rect>
      <x>0</x>
      <y>110</y>
-     <width>311</width>
+     <width>461</width>
      <height>540</height>
     </rect>
    </property>
@@ -124,8 +124,8 @@ color:rgb(255, 255, 255);
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>29</y>
+     <x>560</x>
+     <y>179</y>
      <width>291</width>
      <height>71</height>
     </rect>
@@ -137,7 +137,7 @@ color:rgb(255, 255, 255);
     </font>
    </property>
    <property name="text">
-    <string>Enter Member name or number to display total purchases with tax</string>
+    <string>Enter Member Name or Number</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -149,9 +149,9 @@ color:rgb(255, 255, 255);
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>120</x>
      <y>10</y>
-     <width>151</width>
+     <width>221</width>
      <height>81</height>
     </rect>
    </property>
@@ -162,7 +162,7 @@ color:rgb(255, 255, 255);
     </font>
    </property>
    <property name="text">
-    <string>Current Members</string>
+    <string>Purchases of Members</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -174,8 +174,8 @@ color:rgb(255, 255, 255);
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>160</y>
+     <x>610</x>
+     <y>310</y>
      <width>200</width>
      <height>60</height>
     </rect>
@@ -188,7 +188,26 @@ border-radius:10px;
 </string>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="inventory_2">
+   <property name="geometry">
+    <rect>
+     <x>461</x>
+     <y>110</y>
+     <width>131</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QHeaderView::section, QTableCornerButton::section {background-color: rgb(202, 210, 197); color:rgb(0, 0, 0)};
+
+color:rgb(255, 255, 255);
+
+
+</string>
    </property>
   </widget>
  </widget>
