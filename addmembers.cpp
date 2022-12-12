@@ -2,6 +2,7 @@
 #include "ui_addmembers.h"
 
 
+
 AddMembers::AddMembers(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddMembers)
@@ -101,6 +102,7 @@ void AddMembers::on_addmembers_2_clicked()
                 qDebug() << qry.lastError().text();
                 qDebug() << "\nfailed to add member";
             }
+
         }
     //    qry.prepare("UPDATE Members SET RebateAmount=0, TotalAmountSpent =0 WHERE RebateAmount IS NULL OR TotalAmountSpent IS NULL");
     //    if (qry.exec())

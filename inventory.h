@@ -40,6 +40,8 @@ private slots:
 
     void on_Update_clicked();
 
+    void on_Delete_clicked();
+
 private:
     Ui::Inventory *ui;
 };

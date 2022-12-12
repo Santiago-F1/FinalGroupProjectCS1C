@@ -130,7 +130,7 @@ color:rgb(255, 255, 255);
     </font>
    </property>
    <property name="text">
-    <string>Quantiy and Revenue</string>
+    <string>Quantity and Revenue</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

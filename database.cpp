@@ -15,7 +15,7 @@ QSqlDatabase database =QSqlDatabase::addDatabase("QSQLITE");
 
 void setupDatabasePurchases(QString filePath)
 {
-    database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
 
     if (database.open())
@@ -83,7 +83,7 @@ void setupDatabasePurchases(QString filePath)
 
 void setupDatabasePeople(QString filePath)
 {
-   //database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+   //database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     if (database.open())
     {
@@ -122,7 +122,7 @@ void setupDatabasePeople(QString filePath)
 
             qInfo() << "Month: " << Month << " Day: " << Day << " Year: " << Year;
 
-            qDebug() << qry.prepare("INSERT or IGNORE INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear)" "VALUES(?,?,?,?,?,?,?,?)");
+            qDebug() << qry.prepare("INSERT or IGNORE INTO Members (MemberName, MemberNumber, MembershipType, TotalAmountSpent, RebateAmount, expirationMonth, expirationDay, expirationYear, renewAmount)" "VALUES(?,?,?,?,?,?,?,?,?)");
             qDebug() << qry.lastError().text();
             qry.bindValue(0, memberName);
             qry.bindValue(1, memberID);
@@ -132,6 +132,14 @@ void setupDatabasePeople(QString filePath)
             qry.bindValue(5, Month);
             qry.bindValue(6, Day);
             qry.bindValue(7, Year);
+            if (membershipType.toStdString() == "Regular")
+            {
+                qry.bindValue(8,65);
+            }
+            else
+            {
+                qry.bindValue(8,120);
+            }
             if (qry.exec())
             {
                 qDebug() << "\nDatabase worked";
@@ -244,7 +252,7 @@ void shouldupgrade()
 
 void clearDatabase()
 {
-   database.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+   database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     if (database.open())
     {

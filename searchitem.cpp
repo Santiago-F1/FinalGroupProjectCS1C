@@ -1,6 +1,7 @@
 #include "searchitem.h"
 #include "ui_searchitem.h"
 
+
 SearchItem::SearchItem(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SearchItem)
@@ -8,7 +9,7 @@ SearchItem::SearchItem(QWidget *parent) :
 
     ui->setupUi(this);
     QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
-    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database1.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     QSqlQueryModel *modal=new QSqlQueryModel;
     if(database1.open())
@@ -41,7 +42,7 @@ void SearchItem::on_addmembers_2_clicked()
 {
 
     QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
-    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database1.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     QSqlQueryModel *modal=new QSqlQueryModel;
     QString search;

@@ -7,7 +7,7 @@ MemPurchases::MemPurchases(QWidget *parent) :
 {
     ui->setupUi(this);
     QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
-    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database1.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     QSqlQueryModel *modal=new QSqlQueryModel;
     if(database1.open())
@@ -37,7 +37,7 @@ MemPurchases::MemPurchases(QWidget *parent) :
 void MemPurchases::on_pushButton_clicked()
 {
     QSqlDatabase database1 =QSqlDatabase::addDatabase("QSQLITE");
-    database1.setDatabaseName("C:/Users/duffy/OneDrive/Documents/finalcs1c/KasimAlexHSantiagoFinalProject/items.db");
+    database1.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
     QSqlQuery qry;
     QSqlQueryModel *modal=new QSqlQueryModel;
     QString search;

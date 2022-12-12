@@ -5,6 +5,7 @@
 #include <QDate>
 #include <QSqlError>
 
+
 extern QSqlDatabase database;
 QString originalDate;
 QDate originalDateFormat;
@@ -59,6 +60,7 @@ void Inventory::on_Add_clicked()
         if (qry.exec())
         {
             qDebug() << "\nDatabase worked";
+
         }
         else
         {
@@ -167,6 +169,7 @@ void Inventory::on_Update_clicked()
         {
             qDebug() << "update add fine";
                     qDebug() << qry.lastError().text();
+
         }
         else
         {
@@ -178,3 +181,26 @@ void Inventory::on_Update_clicked()
 
 }
 
+
+void Inventory::on_Delete_clicked()
+{
+    database.setDatabaseName("C:/Users/Santiago/Documents/QT Stuff/FinalProjectCS1C/items.db");
+    QSqlQuery qry;
+    if (database.open())
+    {
+        qry.prepare("DELETE FROM items WHERE ProductDescription = '"+originalProductDescription+"'");
+        qDebug() << qry.lastError().text();
+        if (qry.exec())
+        {
+            qDebug() << "delete fine";
+                    qDebug() << qry.lastError().text();
+
+        }
+        else
+        {
+            qDebug() << "delete did not work";
+                    qDebug() << qry.lastError().text();
+        }
+        database.close();
+    }
+}
